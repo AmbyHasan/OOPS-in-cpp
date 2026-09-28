@@ -1,10 +1,15 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 class Car {
 
     public:
     virtual void startEngine()=0;  //here virtual void means that the function is a pure virtual function, which means that any derived class must provide an implementation for this function
     // The "=0" syntax indicates that the function has no implementation in the base class and must be overridden in any subclass.
     // This makes the Car class an abstract class, meaning it cannot be instantiated on its own and is intended to be used as a base class for other classes that represent specific types of cars.
-    virtual void shiftGear()=0;
+    virtual void shiftGear(int gear)=0;
     virtual void accelerate()=0;
     virtual void brake()=0;
     virtual void stopEngine()=0;
@@ -16,20 +21,20 @@ class SportsCar : public Car {
     public:
     string brand;
     string model;
-    bool isEngineOne;
-    int currentSpead;
+    bool isEngineOn;
+    int currentSpeed;
     int currentGear;
 
     SportsCar(string b ,  string m){
         this->brand = b;
         this->model = m;
-        isEngineOne = false;
+        isEngineOn = false;
         currentSpeed=0;
         currentGear=0; //neutral
     }
 
     void startEngine(){
-        isEngineOne = true;
+        isEngineOn = true;
         cout << brand << " " << model << " engine started." << endl;
     }
 
@@ -81,5 +86,5 @@ int main(){
        myCar->stopEngine();
 
        delete myCar;// clean up memory allocated for the car object
-       return 0
-}
+       return 0;
+};
