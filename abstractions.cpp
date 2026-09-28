@@ -88,3 +88,10 @@ int main(){
        delete myCar;// clean up memory allocated for the car object
        return 0;
 };
+
+
+//ABSTRACTION is nothing but hiding the implementation details and showing only functionality to the user.
+//  In C++, abstraction can be achieved using abstract classes and interfaces. 
+// An abstract class is a class that cannot be instantiated on its own and is intended to be used as a base class for other classes. 
+// It can contain pure virtual functions, which are functions that have no implementation in the base class and must be overridden in any derived class.
+//  This allows for a clear separation between the interface (what the class does) and the implementation (how it does it), making the code easier to understand, maintain, and extend.
